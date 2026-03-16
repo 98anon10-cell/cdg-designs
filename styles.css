@@ -8,31 +8,33 @@
    ------------------------------------------------------------------ */
 :root {
   /* ---- Palette (Dark — default) ---- */
-  --bg-deep: #04090f;
-  --bg: #070e1a;
-  --bg-soft: #0d1b2e;
-  --surface: #111f36;
-  --surface-soft: #152a47;
+  --bg-deep: #050a12;
+  --bg: #080f1e;
+  --bg-soft: #0e1c32;
+  --surface: #12223c;
+  --surface-soft: #172d4e;
 
-  --text: #e8f1ff;
-  --text-muted: #8aa3c4;
-  --text-dim: #516b8a;
-  --line: #1c3352;
+  --text: #eaf2ff;
+  --text-muted: #90afd0;
+  --text-dim: #5a7a9e;
+  --line: #1e3858;
 
-  --accent: #60b4ff;
-  --accent-2: #f47da0;
-  --accent-3: #5eebb2;
-  --accent-glow: rgba(96, 180, 255, 0.14);
+  --accent: #6abfff;
+  --accent-2: #ff7eb3;
+  --accent-3: #6df0bf;
+  --accent-glow: rgba(106, 191, 255, 0.16);
+  --accent-2-glow: rgba(255, 126, 179, 0.12);
+  --accent-3-glow: rgba(109, 240, 191, 0.10);
 
   /* ---- Shadows ---- */
-  --shadow-sm: 0 10px 30px rgba(0, 4, 12, 0.4);
-  --shadow-md: 0 18px 48px rgba(0, 4, 12, 0.5);
-  --shadow-lg: 0 24px 68px rgba(0, 4, 12, 0.6);
+  --shadow-sm: 0 10px 30px rgba(0, 4, 12, 0.45), 0 0 0 1px rgba(106, 191, 255, 0.03);
+  --shadow-md: 0 18px 48px rgba(0, 4, 12, 0.55), 0 0 0 1px rgba(106, 191, 255, 0.04);
+  --shadow-lg: 0 24px 68px rgba(0, 4, 12, 0.65), 0 0 0 1px rgba(106, 191, 255, 0.05);
 
   /* ---- Glass ---- */
-  --glass-bg: rgba(17, 31, 54, 0.55);
-  --glass-border: rgba(28, 51, 82, 0.5);
-  --header-bg: rgba(7, 14, 26, 0.78);
+  --glass-bg: rgba(18, 34, 60, 0.6);
+  --glass-border: rgba(30, 56, 88, 0.55);
+  --header-bg: rgba(8, 15, 30, 0.82);
 
   /* ---- Radii ---- */
   --radius: 16px;
@@ -113,29 +115,31 @@
 
 /* ---- Light theme ---- */
 [data-theme="light"] {
-  --bg-deep: #f0f3f8;
-  --bg: #f8f9fc;
-  --bg-soft: #eef1f7;
-  --surface: #e4e9f2;
-  --surface-soft: #d8dfe9;
+  --bg-deep: #f0f4fa;
+  --bg: #f7f9fe;
+  --bg-soft: #edf2fb;
+  --surface: #e2eaf6;
+  --surface-soft: #d4deee;
 
-  --text: #1a2240;
-  --text-muted: #5b6880;
-  --text-dim: #8996ac;
-  --line: #cdd4e0;
+  --text: #141e38;
+  --text-muted: #4d6080;
+  --text-dim: #7e90ab;
+  --line: #c4d0e4;
 
-  --accent: #2d7ee0;
-  --accent-2: #e0527a;
-  --accent-3: #18a870;
-  --accent-glow: rgba(45, 126, 224, 0.12);
+  --accent: #2b7ce5;
+  --accent-2: #e8457a;
+  --accent-3: #12b876;
+  --accent-glow: rgba(43, 124, 229, 0.14);
+  --accent-2-glow: rgba(232, 69, 122, 0.10);
+  --accent-3-glow: rgba(18, 184, 118, 0.08);
 
-  --shadow-sm: 0 10px 30px rgba(30, 40, 60, 0.08);
-  --shadow-md: 0 18px 48px rgba(30, 40, 60, 0.1);
-  --shadow-lg: 0 24px 68px rgba(30, 40, 60, 0.14);
+  --shadow-sm: 0 10px 30px rgba(20, 30, 56, 0.07), 0 2px 6px rgba(43, 124, 229, 0.04);
+  --shadow-md: 0 18px 48px rgba(20, 30, 56, 0.10), 0 4px 12px rgba(43, 124, 229, 0.05);
+  --shadow-lg: 0 24px 68px rgba(20, 30, 56, 0.14), 0 6px 18px rgba(43, 124, 229, 0.06);
 
-  --glass-bg: rgba(248, 249, 252, 0.7);
-  --glass-border: rgba(205, 212, 224, 0.6);
-  --header-bg: rgba(248, 249, 252, 0.82);
+  --glass-bg: rgba(247, 249, 254, 0.75);
+  --glass-border: rgba(196, 208, 228, 0.65);
+  --header-bg: rgba(247, 249, 254, 0.85);
 }
 
 /* ------------------------------------------------------------------
@@ -354,20 +358,21 @@ ol {
 .section-surface {
   background:
     radial-gradient(44rem 22rem at 84% 0%, var(--accent-glow), transparent 72%),
-    radial-gradient(30rem 18rem at 10% 100%, color-mix(in srgb, var(--accent-2) 7%, transparent), transparent 65%),
-    radial-gradient(25rem 15rem at 50% 50%, color-mix(in srgb, var(--accent-3) 4%, transparent), transparent 60%),
-    radial-gradient(35rem 20rem at 90% 80%, color-mix(in srgb, var(--accent) 4%, transparent), transparent 55%),
-    radial-gradient(20rem 12rem at 30% 20%, color-mix(in srgb, var(--accent-2) 3%, transparent), transparent 50%),
+    radial-gradient(30rem 18rem at 10% 100%, color-mix(in srgb, var(--accent-2) 8%, transparent), transparent 65%),
+    radial-gradient(25rem 15rem at 50% 50%, color-mix(in srgb, var(--accent-3) 5%, transparent), transparent 60%),
+    radial-gradient(35rem 20rem at 90% 80%, color-mix(in srgb, var(--accent) 5%, transparent), transparent 55%),
+    radial-gradient(20rem 12rem at 30% 20%, color-mix(in srgb, var(--accent-2) 4%, transparent), transparent 50%),
+    radial-gradient(28rem 16rem at 65% 40%, color-mix(in srgb, var(--accent-3) 3%, transparent), transparent 48%),
     linear-gradient(165deg, var(--bg-soft), var(--bg));
-  border-top: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
+  border-top: 1px solid color-mix(in srgb, var(--accent) 5%, var(--glass-border));
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-2) 5%, var(--glass-border));
 }
 
 .section-divider {
   display: block;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--line), color-mix(in srgb, var(--accent) 20%, var(--line)), var(--line), transparent);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 30%, var(--line)), var(--accent), color-mix(in srgb, var(--accent-2) 50%, var(--accent)), var(--accent-2), color-mix(in srgb, var(--accent-2) 30%, var(--line)), transparent);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 1s var(--ease-out-expo);
@@ -428,9 +433,16 @@ h3 { font-size: var(--fs-h3); }
   display: block;
   width: 32px;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+  background-size: 200% 100%;
   flex-shrink: 0;
   border-radius: 1px;
+  animation: eyebrowGrad 4s ease-in-out infinite alternate;
+}
+
+@keyframes eyebrowGrad {
+  0% { background-position: 0% 50%; width: 32px; }
+  100% { background-position: 100% 50%; width: 40px; }
 }
 
 .section-head {
@@ -448,13 +460,22 @@ h3 { font-size: var(--fs-h3); }
   margin: 0;
   background: linear-gradient(
     135deg,
-    var(--text) 0%,
-    var(--text) 60%,
-    color-mix(in srgb, var(--accent) 50%, var(--text)) 100%
+    color-mix(in srgb, var(--accent) 35%, var(--text)) 0%,
+    var(--text) 25%,
+    var(--text) 50%,
+    color-mix(in srgb, var(--accent-2) 40%, var(--text)) 75%,
+    color-mix(in srgb, var(--accent-3) 25%, var(--text)) 100%
   );
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: sectionHeadShimmer 12s ease-in-out infinite alternate;
+}
+
+@keyframes sectionHeadShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .section-note {
@@ -490,9 +511,12 @@ h3 { font-size: var(--fs-h3); }
   left: 0;
   height: 2px;
   width: calc(var(--scroll-pct, 0) * 1%);
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+  background-size: 300% 100%;
+  animation: progressGradient 6s linear infinite;
   z-index: 101;
   transition: width 0.15s linear;
+  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .header-hidden {
@@ -712,10 +736,11 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 60%, var(--accent-2)));
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 50%, var(--accent-2)));
   color: var(--bg-deep);
-  box-shadow: 0 8px 30px rgba(122, 214, 255, 0.2),
-              0 2px 8px rgba(122, 214, 255, 0.1);
+  box-shadow: 0 8px 30px var(--accent-glow),
+              0 2px 8px var(--accent-glow),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -730,7 +755,7 @@ h3 { font-size: var(--fs-h3); }
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.25),
     transparent
   );
   transition: left 0.6s var(--ease-out-expo);
@@ -741,8 +766,10 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .btn-primary:hover {
-  box-shadow: 0 14px 40px rgba(122, 214, 255, 0.3),
-              0 4px 12px rgba(122, 214, 255, 0.15);
+  box-shadow: 0 14px 44px var(--accent-glow),
+              0 6px 16px var(--accent-glow),
+              0 0 60px color-mix(in srgb, var(--accent) 15%, transparent);
+  filter: brightness(1.08);
 }
 
 .btn-ghost {
@@ -753,9 +780,13 @@ h3 { font-size: var(--fs-h3); }
 }
 
 .btn-ghost:hover {
-  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
-  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
-  box-shadow: 0 0 24px rgba(122, 214, 255, 0.06);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background:
+    radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%),
+    color-mix(in srgb, var(--accent) 6%, var(--surface));
+  box-shadow: 0 0 30px var(--accent-glow),
+              inset 0 0 20px color-mix(in srgb, var(--accent) 4%, transparent);
+  color: var(--accent);
 }
 
 /* ------------------------------------------------------------------
@@ -1198,14 +1229,23 @@ body,
   background: linear-gradient(
     135deg,
     var(--accent) 0%,
-    var(--text) 40%,
-    var(--text) 60%,
-    color-mix(in srgb, var(--accent-2) 60%, var(--text)) 100%
+    color-mix(in srgb, var(--accent) 70%, var(--text)) 20%,
+    var(--text) 45%,
+    var(--text) 55%,
+    color-mix(in srgb, var(--accent-2) 70%, var(--text)) 80%,
+    var(--accent-2) 100%
   );
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 40px var(--accent-glow));
+  filter: drop-shadow(0 0 50px var(--accent-glow));
+  animation: titleShimmer 8s ease-in-out infinite alternate;
+}
+
+@keyframes titleShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .hero-copy {
@@ -1316,8 +1356,34 @@ body,
 }
 
 .metric-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
-  box-shadow: 0 8px 32px rgba(122, 214, 255, 0.06);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  box-shadow: 0 8px 32px var(--accent-glow), 0 0 60px color-mix(in srgb, var(--accent) 4%, transparent);
+}
+
+.metric-card:nth-child(2):hover {
+  border-color: color-mix(in srgb, var(--accent-2) 30%, transparent);
+  box-shadow: 0 8px 32px var(--accent-2-glow), 0 0 60px color-mix(in srgb, var(--accent-2) 4%, transparent);
+}
+
+.metric-card:nth-child(2)::after {
+  background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
+}
+
+.metric-card:nth-child(2) strong {
+  color: var(--accent-2);
+}
+
+.metric-card:nth-child(3):hover {
+  border-color: color-mix(in srgb, var(--accent-3) 30%, transparent);
+  box-shadow: 0 8px 32px var(--accent-3-glow), 0 0 60px color-mix(in srgb, var(--accent-3) 4%, transparent);
+}
+
+.metric-card:nth-child(3)::after {
+  background: linear-gradient(90deg, transparent, var(--accent-3), transparent);
+}
+
+.metric-card:nth-child(3) strong {
+  color: var(--accent-3);
 }
 
 .metric-card:hover::before {
@@ -1621,9 +1687,21 @@ body,
 }
 
 .marquee-tag:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
-  color: var(--text);
-  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--accent);
+  background:
+    radial-gradient(ellipse at 50% 100%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%),
+    color-mix(in srgb, var(--accent) 8%, var(--surface));
+  box-shadow: 0 4px 20px var(--accent-glow), inset 0 -2px 8px color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+.marquee-tag:nth-child(even):hover {
+  border-color: color-mix(in srgb, var(--accent-2) 40%, transparent);
+  color: var(--accent-2);
+  background:
+    radial-gradient(ellipse at 50% 100%, color-mix(in srgb, var(--accent-2) 10%, transparent), transparent 70%),
+    color-mix(in srgb, var(--accent-2) 6%, var(--surface));
+  box-shadow: 0 4px 20px var(--accent-2-glow);
 }
 
 /* ------------------------------------------------------------------
@@ -1688,11 +1766,84 @@ body,
     );
 }
 
+.service-card:nth-child(4) {
+  background:
+    radial-gradient(
+      250px circle at 90% 90%,
+      color-mix(in srgb, var(--accent) 5%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      180px circle at 10% 10%,
+      color-mix(in srgb, var(--accent-2) 4%, transparent),
+      transparent 55%
+    ),
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--surface-soft) 60%, transparent),
+      color-mix(in srgb, var(--surface) 80%, transparent)
+    );
+}
+
+.service-card:nth-child(5) {
+  background:
+    radial-gradient(
+      250px circle at 50% 100%,
+      color-mix(in srgb, var(--accent-3) 5%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      180px circle at 80% 0%,
+      color-mix(in srgb, var(--accent) 4%, transparent),
+      transparent 55%
+    ),
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--surface-soft) 60%, transparent),
+      color-mix(in srgb, var(--surface) 80%, transparent)
+    );
+}
+
+.service-card:nth-child(6) {
+  background:
+    radial-gradient(
+      250px circle at 0% 50%,
+      color-mix(in srgb, var(--accent-2) 5%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      180px circle at 100% 50%,
+      color-mix(in srgb, var(--accent-3) 4%, transparent),
+      transparent 55%
+    ),
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--surface-soft) 60%, transparent),
+      color-mix(in srgb, var(--surface) 80%, transparent)
+    );
+}
+
 .service-card:hover {
   transform: translateY(-8px);
   border-color: color-mix(in srgb, var(--accent) 35%, transparent);
   box-shadow: var(--shadow-md),
-              0 0 30px var(--accent-glow);
+              0 0 40px var(--accent-glow),
+              0 0 80px color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+.service-card:nth-child(2):hover {
+  border-color: color-mix(in srgb, var(--accent-2) 35%, transparent);
+  box-shadow: var(--shadow-md),
+              0 0 40px var(--accent-2-glow),
+              0 0 80px color-mix(in srgb, var(--accent-2) 5%, transparent);
+}
+
+.service-card:nth-child(3):hover,
+.service-card:nth-child(5):hover {
+  border-color: color-mix(in srgb, var(--accent-3) 35%, transparent);
+  box-shadow: var(--shadow-md),
+              0 0 40px var(--accent-3-glow),
+              0 0 80px color-mix(in srgb, var(--accent-3) 5%, transparent);
 }
 
 /* Card glare effect */
@@ -1751,9 +1902,22 @@ body,
 }
 
 .service-card:hover .service-icon {
-  background: color-mix(in srgb, var(--accent) 16%, transparent);
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
-  box-shadow: 0 0 20px var(--accent-glow);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 20%, transparent), color-mix(in srgb, var(--accent-2) 12%, transparent));
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  box-shadow: 0 0 24px var(--accent-glow), 0 0 48px color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.service-card:nth-child(2) .service-icon {
+  background: color-mix(in srgb, var(--accent-2) 10%, transparent);
+  border-color: color-mix(in srgb, var(--accent-2) 20%, transparent);
+  color: var(--accent-2);
+}
+
+.service-card:nth-child(3) .service-icon,
+.service-card:nth-child(5) .service-icon {
+  background: color-mix(in srgb, var(--accent-3) 10%, transparent);
+  border-color: color-mix(in srgb, var(--accent-3) 20%, transparent);
+  color: var(--accent-3);
 }
 
 .service-icon svg {
@@ -1801,6 +1965,21 @@ body,
 
 .service-card:hover h3 {
   background: linear-gradient(135deg, var(--text), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.service-card:nth-child(2):hover h3 {
+  background: linear-gradient(135deg, var(--text), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.service-card:nth-child(3):hover h3,
+.service-card:nth-child(5):hover h3 {
+  background: linear-gradient(135deg, var(--text), var(--accent-3));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1883,8 +2062,39 @@ body,
 .price-card:hover {
   transform: translateY(-6px) scale(1.01);
   box-shadow: var(--shadow-md),
-              0 0 30px var(--accent-glow);
-  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+              0 0 40px var(--accent-glow),
+              0 0 80px color-mix(in srgb, var(--accent) 5%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.price-card:last-child {
+  background:
+    radial-gradient(
+      300px circle at 20% 0%,
+      color-mix(in srgb, var(--accent-2) 5%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      200px circle at 80% 100%,
+      color-mix(in srgb, var(--accent) 4%, transparent),
+      transparent 55%
+    ),
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--surface-soft) 60%, transparent),
+      color-mix(in srgb, var(--surface) 80%, transparent)
+    );
+}
+
+.price-card:last-child:hover {
+  border-color: color-mix(in srgb, var(--accent-2) 35%, transparent);
+  box-shadow: var(--shadow-md),
+              0 0 40px var(--accent-2-glow),
+              0 0 80px color-mix(in srgb, var(--accent-2) 5%, transparent);
+}
+
+.price-card:last-child::after {
+  background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
 }
 
 /* Featured card with animated border */
@@ -1945,8 +2155,15 @@ body,
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--bg-deep);
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: 0 4px 16px rgba(122, 214, 255, 0.2);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
+  background-size: 200% 100%;
+  box-shadow: 0 4px 20px rgba(106, 191, 255, 0.25), 0 0 40px rgba(255, 126, 179, 0.1);
+  animation: badgeShimmer 4s ease-in-out infinite alternate;
+}
+
+@keyframes badgeShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .price-tier {
@@ -1963,12 +2180,19 @@ body,
   font-family: var(--font-display);
   font-size: clamp(2rem, 3vw, 3rem);
   line-height: 1;
-  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 60%, var(--accent-3)));
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 50%, var(--accent-3)), var(--accent-3));
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
   filter: drop-shadow(0 0 20px var(--accent-glow));
+  animation: priceShimmer 6s ease-in-out infinite alternate;
+}
+
+@keyframes priceShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .price-meta {
@@ -2005,7 +2229,7 @@ body,
 
 .pricing-maintenance {
   margin-top: var(--space-xl);
-  border: 1px solid color-mix(in srgb, var(--line) 50%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-3) 20%, var(--line) 40%);
   border-radius: var(--radius-pill);
   padding: 12px 24px;
   width: fit-content;
@@ -2013,17 +2237,29 @@ body,
   background:
     radial-gradient(
       200px circle at 0% 50%,
-      color-mix(in srgb, var(--accent-3) 6%, transparent),
+      color-mix(in srgb, var(--accent-3) 8%, transparent),
       transparent 50%
     ),
     radial-gradient(
       200px circle at 100% 50%,
-      color-mix(in srgb, var(--accent) 5%, transparent),
+      color-mix(in srgb, var(--accent) 7%, transparent),
       transparent 50%
+    ),
+    radial-gradient(
+      150px circle at 50% 50%,
+      color-mix(in srgb, var(--accent-2) 3%, transparent),
+      transparent 45%
     ),
     color-mix(in srgb, var(--surface) 60%, transparent);
   backdrop-filter: blur(8px);
   text-align: center;
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-3) 6%, transparent);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.pricing-maintenance:hover {
+  border-color: color-mix(in srgb, var(--accent-3) 35%, transparent);
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--accent-3) 12%, transparent);
 }
 
 .pricing-maintenance p {
@@ -2049,7 +2285,7 @@ body,
   top: 0;
   bottom: 0;
   width: 2px;
-  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 15%, transparent), color-mix(in srgb, var(--accent-2) 10%, transparent), color-mix(in srgb, var(--accent-3) 12%, transparent));
   transform-origin: top;
   transform: translateX(-50%);
 }
@@ -2061,8 +2297,9 @@ body,
   left: 0;
   width: 100%;
   height: calc(var(--timeline-progress, 0) * 1%);
-  background: var(--accent);
+  background: linear-gradient(180deg, var(--accent), var(--accent-2), var(--accent-3));
   transition: height 0.2s linear;
+  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .timeline {
@@ -2101,10 +2338,29 @@ body,
   font-weight: 700;
   color: var(--accent);
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-  background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+  background:
+    radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
+    color-mix(in srgb, var(--accent) 8%, var(--bg));
   position: relative;
   z-index: 2;
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+.timeline-step:nth-child(even) .timeline-marker {
+  color: var(--accent-2);
+  border-color: color-mix(in srgb, var(--accent-2) 30%, transparent);
+  background:
+    radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 70%),
+    color-mix(in srgb, var(--accent-2) 8%, var(--bg));
+}
+
+.timeline-step:nth-child(3) .timeline-marker,
+.timeline-step:nth-child(5) .timeline-marker {
+  color: var(--accent-3);
+  border-color: color-mix(in srgb, var(--accent-3) 30%, transparent);
+  background:
+    radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent-3) 14%, transparent), transparent 70%),
+    color-mix(in srgb, var(--accent-3) 8%, var(--bg));
 }
 
 .timeline-step.is-visible .timeline-marker {
@@ -2215,8 +2471,15 @@ body,
 .filter-chip.is-active {
   color: var(--bg-deep);
   border-color: transparent;
-  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 60%, var(--accent-2)));
-  box-shadow: 0 4px 16px rgba(122, 214, 255, 0.2);
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 40%, var(--accent-2)), var(--accent-2));
+  background-size: 200% 100%;
+  box-shadow: 0 4px 20px rgba(106, 191, 255, 0.25), 0 0 40px rgba(106, 191, 255, 0.08);
+  animation: filterChipGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes filterChipGlow {
+  0% { background-position: 0% 50%; box-shadow: 0 4px 20px rgba(106, 191, 255, 0.25); }
+  100% { background-position: 100% 50%; box-shadow: 0 4px 24px rgba(255, 126, 179, 0.2), 0 0 50px rgba(255, 126, 179, 0.06); }
 }
 
 .project-grid {
@@ -2592,13 +2855,18 @@ body,
   max-width: 18ch;
   background: linear-gradient(
     135deg,
-    var(--text) 0%,
+    var(--accent) 0%,
+    color-mix(in srgb, var(--accent) 60%, var(--text)) 25%,
     var(--text) 50%,
-    var(--accent) 100%
+    color-mix(in srgb, var(--accent-2) 60%, var(--text)) 75%,
+    var(--accent-2) 100%
   );
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: titleShimmer 10s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 30px var(--accent-glow));
 }
 
 .cta-availability {
@@ -2611,8 +2879,17 @@ body,
   font-weight: 600;
   padding: 8px 20px;
   border-radius: var(--radius-pill);
-  border: 1px solid color-mix(in srgb, var(--accent-3) 25%, transparent);
-  background: color-mix(in srgb, var(--accent-3) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-3) 30%, transparent);
+  background:
+    radial-gradient(ellipse at 0% 50%, color-mix(in srgb, var(--accent-3) 10%, transparent), transparent 60%),
+    color-mix(in srgb, var(--accent-3) 5%, transparent);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent-3) 8%, transparent);
+  animation: availabilityPulse 4s ease-in-out infinite;
+}
+
+@keyframes availabilityPulse {
+  0%, 100% { box-shadow: 0 4px 20px color-mix(in srgb, var(--accent-3) 8%, transparent); }
+  50% { box-shadow: 0 4px 30px color-mix(in srgb, var(--accent-3) 16%, transparent), 0 0 60px color-mix(in srgb, var(--accent-3) 5%, transparent); }
 }
 
 .status-dot {
@@ -2671,13 +2948,18 @@ body,
   background:
     radial-gradient(
       500px circle at 10% 0%,
-      color-mix(in srgb, var(--accent) 4%, transparent),
+      color-mix(in srgb, var(--accent) 6%, transparent),
       transparent 55%
     ),
     radial-gradient(
       400px circle at 90% 100%,
-      color-mix(in srgb, var(--accent-2) 3%, transparent),
+      color-mix(in srgb, var(--accent-2) 5%, transparent),
       transparent 50%
+    ),
+    radial-gradient(
+      300px circle at 50% 50%,
+      color-mix(in srgb, var(--accent-3) 3%, transparent),
+      transparent 45%
     );
 }
 
@@ -2687,8 +2969,9 @@ body,
   top: 0;
   left: 5%;
   right: 5%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 30%, var(--line)), color-mix(in srgb, var(--accent-2) 20%, var(--line)), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), color-mix(in srgb, var(--accent-2) 60%, var(--accent)), var(--accent-2), transparent);
+  opacity: 0.4;
 }
 
 .footer-grid {
@@ -2736,6 +3019,7 @@ body,
 .footer-contact a:hover {
   color: var(--accent);
   transform: translateX(4px);
+  text-shadow: 0 0 12px var(--accent-glow);
 }
 
 .footer-contact {
@@ -2773,10 +3057,12 @@ body,
 }
 
 .back-to-top:hover {
-  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
-  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
-  box-shadow: 0 0 20px var(--accent-glow);
-  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 15%, transparent), transparent 70%),
+    color-mix(in srgb, var(--accent) 10%, var(--surface));
+  box-shadow: 0 0 24px var(--accent-glow), 0 0 48px color-mix(in srgb, var(--accent) 6%, transparent);
+  transform: translateY(-4px);
 }
 
 .back-to-top svg {
@@ -3206,6 +3492,11 @@ body,
   100% {
     background-position: 420px -320px;
   }
+}
+
+@keyframes progressGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }
 
 /* ------------------------------------------------------------------
