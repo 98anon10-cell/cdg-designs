@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDG Designs | Dise&ntilde;o y desarrollo web premium</title>
+    <meta
+      name="description"
+      content="Dise&ntilde;o y desarrollo web premium para marcas que quieren destacar. Webs elegantes, r&aacute;pidas y orientadas a conversi&oacute;n."
+    />
+    <meta name="theme-color" content="#0b1423" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CDG Designs | Dise&ntilde;o y desarrollo web premium" />
+    <meta
+      property="og:description"
+      content="Webs elegantes, con estrategia y resultados. Referencias reales, proceso claro y ejecuci&oacute;n completa."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      // Apply saved theme immediately to prevent flash
+      (function(){var t=localStorage.getItem('cdg-theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();
+    </script>
+  </head>
+
+  <body>
+    <!-- ============================================================
+         LOADING SCREEN
+         ============================================================ -->
+    <div class="loader" id="loader" aria-live="polite">
+      <div class="loader-inner">
+        <svg
+          class="loader-logo"
+          viewBox="0 0 700 700"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="12"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="350" cy="350" r="330" pathLength="1" />
+          <rect x="18" y="18" width="332" height="664" pathLength="1" />
+          <line x1="350" y1="18" x2="350" y2="682" pathLength="1" />
+          <circle cx="455" cy="350" r="172" pathLength="1" />
+        </svg>
+        <span class="loader-percent" id="loader-percent">0</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         CUSTOM CURSOR (pointer:fine only)
+         ============================================================ -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <!-- ============================================================
+         GRAIN FILTER OVERLAY
+         ============================================================ -->
+    <svg class="grain-overlay" aria-hidden="true" width="100%" height="100%">
+      <filter id="grain-filter">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.65"
+          numOctaves="3"
+          stitchTiles="stitch"
+          seed="2"
+        />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#grain-filter)" opacity="0.04" />
+    </svg>
+
+    <!-- ============================================================
+         PAGE BACKGROUND
+         ============================================================ -->
+    <div class="page-bg" aria-hidden="true">
+      <div class="bg-orb orb-a" data-parallax="0.03"></div>
+      <div class="bg-orb orb-b" data-parallax="0.05"></div>
+      <div class="bg-orb orb-c" data-parallax="0.04"></div>
+      <div class="bg-orb orb-d" data-parallax="0.02"></div>
+      <div class="bg-aurora"></div>
+      <div class="bg-aurora bg-aurora-2"></div>
+      <div class="bg-mesh"></div>
+      <div class="bg-grid"></div>
+      <div class="bg-noise"></div>
+    </div>
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+      <div class="header-progress"></div>
+
+      <div class="container header-inner">
+        <a class="brand" href="#inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <img
+              class="brand-mark-image"
+              src="./assets/logo-cdg-clean.svg"
+              alt=""
+              width="40"
+              height="40"
+            />
+          </span>
+          <span class="brand-copy">
+            <strong>CDG Designs</strong>
+            <small>Dise&ntilde;o + C&oacute;digo + Estrategia</small>
+          </span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Navegaci&oacute;n principal">
+          <a href="#servicios">Servicios</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#precios">Precios</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Cambiar tema"
+          >
+            <!-- Sun icon -->
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <!-- Moon icon -->
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <a class="btn btn-header" href="#contacto" data-magnetic>Hablemos</a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Abrir men&uacute;"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+    <main>
+      <!-- ––––––––––––––––––––––––––––––––––––––––––––
+           HERO
+           –––––––––––––––––––––––––––––––––––––––––––– -->
+      <section id="inicio" class="section hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow reveal-up" data-typing>
+              Dise&ntilde;o &middot; C&oacute;digo &middot; Conversi&oacute;n
+            </p>
+
+            <h1 class="hero-title reveal-clip" data-split="chars">
+              Webs que convierten visitas en clientes
+            </h1>
+
+            <p class="hero-copy reveal-up" data-split="words">
+              Creo experiencias digitales con presencia premium: arquitectura clara,
+              carga r&aacute;pida, animaciones finas y enfoque total a conversi&oacute;n.
+              Soy muy r&aacute;pido: media de entrega en 2 d&iacute;as.
+            </p>
+
+            <div class="hero-actions reveal-up">
+              <a class="btn btn-primary" href="#portfolio" data-magnetic>
+                Ver proyectos
+              </a>
+              <a class="btn btn-ghost" href="#contacto" data-magnetic>
+                Pedir propuesta
+              </a>
+            </div>
+
+            <div class="metrics-grid reveal-up">
+              <article class="metric-card">
+                <strong class="countup" data-target="2">0</strong>
+                <span>D&iacute;as entrega</span>
+              </article>
+              <article class="metric-card">
+                <strong class="countup" data-target="10" data-suffix="+">0</strong>
+                <span>Proyectos</span>
+              </article>
+              <article class="metric-card">
+                <strong class="countup" data-target="100" data-suffix="%">0</strong>
+                <span>Satisfacci&oacute;n</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-blob" data-parallax="0.06"></div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator reveal-up" aria-hidden="true">
+          <span class="scroll-indicator-line"></span>
+          <span class="scroll-indicator-text">Scroll</span>
+        </div>
+      </section>
+
+      <!-- ––––––––––––––––––––––––––––––––––––––––––––
+           TRUST STRIP / MARQUEE
+           –––––––––––––––––––––––––––––––––––––––––––– -->
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <section class="section trust-strip" aria-label="Tecnolog&iacute;as">
+        <div class="marquee">
+          <div class="marquee-track">
+            <!-- First set -->
+            <span class="marquee-tag">React</span>
+            <span class="marquee-tag">Vite</span>
+            <span class="marquee-tag">Azure</span>
+            <span class="marquee-tag">Node.js</span>
+            <span class="marquee-tag">UX Strategy</span>
+            <span class="marquee-tag">SEO</span>
+            <span class="marquee-tag">JavaScript</span>
+            <span class="marquee-tag">CSS3</span>
+            <span class="marquee-tag">HTML5</span>
+            <span class="marquee-tag">Figma</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="marquee-tag">React</span>
+            <span class="marquee-tag">Vite</span>
+            <span class="marquee-tag">Azure</span>
+            <span class="marquee-tag">Node.js</span>
+            <span class="marquee-tag">UX Strategy</span>
+            <span class="marquee-tag">SEO</span>
+            <span class="marquee-tag">JavaScript</span>
+            <span class="marquee-tag">CSS3</span>
+            <span class="marquee-tag">HTML5</span>
+            <span class="marquee-tag">Figma</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ––––––––––––––––––––––––––––––––––––––––––––
+           SERVICES
+           –––––––––––––––––––––––––––––––––––––––––––– -->
+      <section id="servicios" class="section">
+        <div class="container">
+          <div class="section-head reveal-up">
+            <p class="eyebrow">Servicios</p>
+            <h2>Todo lo necesario para que tu web venda por ti</h2>
+          </div>
+
+          <div class="services-grid" data-stagger>
+            <!-- Service 01 -->
+            <article class="service-card reveal-scale" data-tilt>
+              <div class="card-glare"></div>
+              <span class="service-number">01</span>
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="6" width="40" height="30" rx="3" />
+                  <line x1="4" y1="14" x2="44" y2="14" />
+                  <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+                  <circle cx="16" cy="10" r="1.5" fill="currentColor" />
+                  <circle cx="22" cy="10" r="1.5" fill="currentColor" />
+                  <line x1="16" y1="42" x2="32" y2="42" />
+                  <line x1="24" y1="36" x2="24" y2="42" />
+                </svg>
+              </div>
+              <h3>Web corporativa premium</h3>
+              <p>
+                Dise&ntilde;o visual elegante, estructura clara y tono de marca consistente
+                para transmitir confianza desde el primer segundo.
+              </p>
+            </article>
+
+            <!-- Service 02 -->
+            <article class="service-card reveal-scale" data-tilt>
+              <div class="card-glare"></div>
+              <span class="service-number">02</span>
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 38 L24 6 L42 38 Z" />
+                  <line x1="15" y1="26" x2="33" y2="26" />
+                  <path d="M24 18 L24 22" />
+                  <circle cx="24" cy="32" r="1.5" fill="currentColor" />
+                </svg>
+              </div>
+              <h3>Landing de conversi&oacute;n</h3>
+              <p>
+                Arquitectura de contenido pensada para captar leads, cerrar citas
+                y mejorar ROI en campa&ntilde;as.
+              </p>
+            </article>
+
+            <!-- Service 03 -->
+            <article class="service-card reveal-scale" data-tilt>
+              <div class="card-glare"></div>
+              <span class="service-number">03</span>
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="40" height="40" rx="4" />
+                  <line x1="4" y1="16" x2="44" y2="16" />
+                  <line x1="16" y1="16" x2="16" y2="44" />
+                  <rect x="22" y="22" width="10" height="6" rx="1" />
+                  <rect x="22" y="32" width="16" height="6" rx="1" />
+                </svg>
+              </div>
+              <h3>Panel de gesti&oacute;n</h3>
+              <p>
+                Backoffice sencillo para que tu equipo gestione contenido, stock o
+                servicios sin depender de terceros.
+              </p>
+            </article>
+
+            <!-- Service 04 -->
+            <article class="service-card reveal-scale" data-tilt>
+              <div class="card-glare"></div>
+              <span class="service-number">04</span>
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 40 C8 20 18 10 24 10 C30 10 40 20 40 40" />
+                  <path d="M14 40 C14 26 20 18 24 18 C28 18 34 26 34 40" />
+                  <circle cx="24" cy="8" r="3" />
+                  <line x1="8" y1="40" x2="40" y2="40" />
+                </svg>
+              </div>
+              <h3>Redise&ntilde;o completo</h3>
+              <p>
+                Modernizaci&oacute;n total de webs antiguas: mejor UX, rendimiento
+                superior y nueva imagen de marca.
+              </p>
+            </article>
+
+            <!-- Service 05 -->
+            <article class="service-card reveal-scale" data-tilt>
+              <div class="card-glare"></div>
+              <span class="service-number">05</span>
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="24" cy="24" r="20" />
+                  <polyline points="24,12 24,24 32,28" />
+                  <path d="M38 38 L44 44" />
+                  <path d="M40 42 L42 40" />
+                </svg>
+              </div>
+              <h3>Mantenimiento evolutivo</h3>
+              <p>
+                Mejoras continuas, nuevas secciones y soporte t&eacute;cnico para que
+                la web crezca con tu negocio.
+              </p>
+            </article>
+
+            <!-- Service 06 -->
+            <article class="service-card reveal-scale" data-tilt>
+              <div class="card-glare"></div>
+              <span class="service-number">06</span>
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M24 4 L24 8" />
+                  <ellipse cx="24" cy="20" rx="18" ry="12" />
+                  <path d="M6 20 L6 30 C6 37 14 44 24 44 C34 44 42 37 42 30 L42 20" />
+                  <path d="M16 16 L16 14 C16 9 20 6 24 6 C28 6 32 9 32 14 L32 16" />
+                  <circle cx="24" cy="24" r="2" fill="currentColor" />
+                  <line x1="24" y1="26" x2="24" y2="30" />
+                </svg>
+              </div>
+              <h3>Despliegue cloud seguro</h3>
+              <p>
+                Configuraci&oacute;n y publicaci&oacute;n en Azure con enfoque profesional:
+                versionado, entorno estable y escalabilidad.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ––––––––––––––––––––––––––––––––––––––––––––
+           PROCESS / TIMELINE
+           –––––––––––––––––––––––––––––––––––––––––––– -->
+      <section id="proceso" class="section">
+        <div class="container">
+          <div class="section-head reveal-up">
+            <p class="eyebrow">Proceso</p>
+            <h2>M&eacute;todo claro, ejecuci&oacute;n r&aacute;pida</h2>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-line" aria-hidden="true"></div>
+
+            <div class="timeline-step reveal-left">
+              <div class="timeline-marker">01</div>
+              <div class="timeline-content">
+                <h3>Brief</h3>
+                <p>
+                  Definimos posicionamiento, p&uacute;blico objetivo, tono de marca y
+                  el objetivo principal de conversi&oacute;n de tu web.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step reveal-right">
+              <div class="timeline-marker">02</div>
+              <div class="timeline-content">
+                <h3>Direcci&oacute;n visual</h3>
+                <p>
+                  Propuesta est&eacute;tica, jerarqu&iacute;a de contenido y experiencia
+                  de usuario final. Dise&ntilde;o validado antes de picar c&oacute;digo.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step reveal-left">
+              <div class="timeline-marker">03</div>
+              <div class="timeline-content">
+                <h3>Desarrollo</h3>
+                <p>
+                  Implementaci&oacute;n t&eacute;cnica, interacciones, animaciones,
+                  optimizaci&oacute;n de rendimiento y validaciones de calidad.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step reveal-right">
+              <div class="timeline-marker">04</div>
+              <div class="timeline-content">
+                <h3>Publicaci&oacute;n</h3>
+                <p>
+                  Despliegue en Azure, seguimiento de m&eacute;tricas y mejoras
+                  iterativas con foco en resultados reales.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step reveal-left">
+              <div class="timeline-marker">05</div>
+              <div class="timeline-content">
+                <h3>Mantenimiento</h3>
+                <p>
+                  Actualizaciones, backups, seguridad y mejoras continuas para que
+                  tu web siga rindiendo y creciendo con tu negocio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ––––––––––––––––––––––––––––––––––––––––––––
+           PRICING
+           –––––––––––––––––––––––––––––––––––––––––––– -->
+      <section id="precios" class="section section-surface">
+        <div class="container">
+          <div class="section-head reveal-up">
+            <p class="eyebrow">Precios</p>
+            <h2>Paquetes claros para empezar r&aacute;pido</h2>
+          </div>
+          <p class="section-note reveal-up">
+            Precios cerrados, sin sorpresas. Pago flexible: 50% al inicio, 50% a la entrega.
+            &iquest;Necesitas algo a medida? Te preparo presupuesto en 24h.
+          </p>
+
+          <div class="pricing-grid">
+            <!-- Starter -->
+            <article class="price-card reveal-up">
+              <p class="price-tier">Starter</p>
+              <p class="price-value">
+                <span class="countup" data-target="250" data-prefix="&euro;">0</span>
+              </p>
+              <p class="price-meta">Pago &uacute;nico &middot; entrega en 2-3 d&iacute;as</p>
+              <ul class="price-list">
+                <li>Landing page a medida, responsive y r&aacute;pida</li>
+                <li>Dise&ntilde;o profesional orientado a conversi&oacute;n</li>
+                <li>Formulario de contacto + Google Analytics</li>
+                <li>SEO b&aacute;sico on-page + despliegue incluido</li>
+                <li>1 ronda de revisiones</li>
+              </ul>
+              <a class="btn btn-ghost" href="#contacto" data-magnetic>Quiero este plan</a>
+            </article>
+
+            <!-- Pro (Featured) -->
+            <div class="price-card-border">
+              <article class="price-card price-card-featured reveal-scale">
+                <span class="price-badge">M&aacute;s popular</span>
+                <p class="price-tier">Pro</p>
+                <p class="price-value">
+                  <span class="countup" data-target="500" data-prefix="&euro;">0</span>
+                </p>
+                <p class="price-meta">Pago &uacute;nico &middot; entrega en 5-7 d&iacute;as</p>
+                <ul class="price-list">
+                  <li>Web corporativa completa (hasta 8 p&aacute;ginas)</li>
+                  <li>Animaciones finas y UX de conversi&oacute;n</li>
+                  <li>Integraciones: contacto, WhatsApp, anal&iacute;tica</li>
+                  <li>SEO t&eacute;cnico + optimizaci&oacute;n de velocidad</li>
+                  <li>2 rondas de revisiones + formaci&oacute;n b&aacute;sica</li>
+                </ul>
+                <a class="btn btn-primary" href="#contacto" data-magnetic>Elegir plan Pro</a>
+              </article>
+            </div>
+
+            <!-- Premium + Panel -->
+            <article class="price-card reveal-up">
+              <p class="price-tier">Premium + Panel</p>
+              <p class="price-value">
+                <span class="countup" data-target="1500" data-prefix="&euro;">0</span>
+              </p>
+              <p class="price-meta">Pago &uacute;nico &middot; entrega en 10-14 d&iacute;as</p>
+              <ul class="price-list">
+                <li>Web premium + panel de gesti&oacute;n a medida</li>
+                <li>Flujos avanzados, escalable y mantenible</li>
+                <li>SEO completo + rendimiento + despliegue cloud</li>
+                <li>Integraciones avanzadas (CRM, email, APIs)</li>
+                <li>3 rondas de revisiones + formaci&oacute;n completa</li>
+              </ul>
+              <a class="btn btn-ghost" href="#contacto" data-magnetic>Pedir propuesta</a>
+            </article>
+          </div>
+
+          <div class="pricing-maintenance reveal-up">
+            <p>
+              <strong>Mantenimiento mensual:</strong> desde 15&euro;/mes.
+              Incluye actualizaciones, backups, seguridad y soporte t&eacute;cnico.
+              Pago 50% inicio + 50% a la entrega.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ––––––––––––––––––––––––––––––––––––––––––––
+           PORTFOLIO / REFERENCES
+           –––––––––––––––––––––––––––––––––––––––––––– -->
+      <section id="portfolio" class="section section-surface">
+        <div class="container">
+          <div class="section-head reveal-up">
+            <p class="eyebrow">Portfolio</p>
+            <h2>Proyectos reales y listos para producci&oacute;n</h2>
+          </div>
+          <p class="section-note reveal-up">
+            Cada proyecto est&aacute; dise&ntilde;ado a medida, con enfoque en
+            conversi&oacute;n y rendimiento.
+          </p>
+
+          <div class="project-filters reveal-up" id="project-filters">
+            <button class="filter-chip is-active" data-filter="all">Todos</button>
+            <button class="filter-chip" data-filter="automocion">Automoci&oacute;n</button>
+            <button class="filter-chip" data-filter="saas">SaaS</button>
+            <button class="filter-chip" data-filter="salud">Salud</button>
+          </div>
+
+          <div class="project-grid" id="project-grid">
+            <!-- Project 1 -->
+            <article
+              class="project-card reveal-scale"
+              data-tilt
+              data-category="automocion"
+              data-color="#8b1a2b"
+            >
+              <div class="project-thumb" style="--project-accent:#8b1a2b">
+                <div class="project-thumb-inner">
+                  <span class="project-initials">RC</span>
+                </div>
+                <div class="project-overlay"></div>
+              </div>
+              <div class="project-info">
+                <h3>RC Autom&oacute;viles</h3>
+                <p class="project-tags">
+                  <span>Automoci&oacute;n</span>
+                  <span>Web corporativa</span>
+                </p>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article
+              class="project-card reveal-scale"
+              data-tilt
+              data-category="automocion"
+              data-color="#f2c200"
+            >
+              <div class="project-thumb" style="--project-accent:#f2c200">
+                <div class="project-thumb-inner">
+                  <span class="project-initials">CC</span>
+                </div>
+                <div class="project-overlay"></div>
+              </div>
+              <div class="project-info">
+                <h3>CarCity Andaluc&iacute;a</h3>
+                <p class="project-tags">
+                  <span>Automoci&oacute;n</span>
+                  <span>Landing page</span>
+                </p>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article
+              class="project-card reveal-scale"
+              data-tilt
+              data-category="saas"
+              data-color="#7ad6ff"
+            >
+              <div class="project-thumb" style="--project-accent:#7ad6ff">
+                <div class="project-thumb-inner">
+                  <span class="project-initials">GA</span>
+                </div>
+                <div class="project-overlay"></div>
+              </div>
+              <div class="project-info">
+                <h3>Grade App</h3>
+                <p class="project-tags">
+                  <span>SaaS</span>
+                  <span>Panel + Web</span>
+                </p>
+              </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article
+              class="project-card reveal-scale"
+              data-tilt
+              data-category="salud"
+              data-color="#80ffcb"
+            >
+              <div class="project-thumb" style="--project-accent:#80ffcb">
+                <div class="project-thumb-inner">
+                  <span class="project-initials">CD</span>
+                </div>
+                <div class="project-overlay"></div>
+              </div>
+              <div class="project-info">
+                <h3>Cl&iacute;nica Dental</h3>
+                <p class="project-tags">
+                  <span>Salud</span>
+                  <span>Web corporativa</span>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- ––––––––––––––––––––––––––––––––––––––––––––
+           CTA / CONTACT
+           –––––––––––––––––––––––––––––––––––––––––––– -->
+      <section id="contacto" class="section cta-section">
+        <div class="container cta-shell">
+          <h2 class="cta-headline reveal-clip" data-split="chars">
+            Construyamos algo que impresione.
+          </h2>
+
+          <div class="cta-availability reveal-up">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Disponible para nuevos proyectos</span>
+          </div>
+
+          <div class="cta-actions reveal-up">
+            <a
+              class="btn btn-primary btn-lg"
+              href="mailto:cdg9810@gmail.com"
+              data-magnetic
+            >
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="M22 4 L12 13 L2 4" />
+              </svg>
+              Enviar email
+            </a>
+            <a
+              class="btn btn-ghost btn-lg"
+              href="https://wa.me/34660426755"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-magnetic
+            >
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.013a9.65 9.65 0 0 1-4.92-1.348l-.353-.21-3.66.96.977-3.567-.23-.367A9.633 9.633 0 0 1 2.37 12.06C2.373 6.726 6.726 2.375 12.063 2.375a9.62 9.62 0 0 1 6.835 2.832 9.609 9.609 0 0 1 2.828 6.84c-.004 5.336-4.356 9.686-9.676 9.738zM20.52 3.449A11.48 11.48 0 0 0 12.05.002C5.464.002.103 5.36.1 11.944a11.88 11.88 0 0 0 1.592 5.946L.057 24l6.233-1.633a11.95 11.95 0 0 0 5.752 1.466h.005c6.587 0 11.948-5.358 11.951-11.942a11.87 11.87 0 0 0-3.478-8.442z" />
+              </svg>
+              WhatsApp
+            </a>
+          </div>
+
+          <p class="cta-phone reveal-up">
+            Tambi&eacute;n puedes llamarme al
+            <a href="tel:+34660426755">+34 660 426 755</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-col footer-brand">
+          <a class="brand" href="#inicio">
+            <span class="brand-mark" aria-hidden="true">
+              <img
+                class="brand-mark-image"
+                src="./assets/logo-cdg-clean.svg"
+                alt=""
+                width="36"
+                height="36"
+              />
+            </span>
+            <strong>CDG Designs</strong>
+          </a>
+          <p class="footer-tagline">
+            Dise&ntilde;o y desarrollo web premium para marcas que quieren destacar.
+          </p>
+        </div>
+
+        <div class="footer-col footer-links">
+          <h4>Enlaces</h4>
+          <nav aria-label="Enlaces del footer">
+            <a href="#servicios">Servicios</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#precios">Precios</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Contacto</h4>
+          <a href="mailto:cdg9810@gmail.com">cdg9810@gmail.com</a>
+          <a href="tel:+34660426755">+34 660 426 755</a>
+          <a href="https://wa.me/34660426755" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; <span id="year-now"></span> CDG Designs. Todos los derechos reservados.</p>
+        <a class="back-to-top" href="#inicio" aria-label="Volver arriba">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="19" x2="12" y2="5" />
+            <polyline points="5 12 12 5 19 12" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

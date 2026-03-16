@@ -1,0 +1,46 @@
+﻿<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 700 700"
+  role="img"
+  aria-labelledby="cdgLogoTitle cdgLogoDesc"
+>
+  <title id="cdgLogoTitle">Logo CDG Designs</title>
+  <desc id="cdgLogoDesc">Logo geometrico azul con lineas diagonales y aro semicircular.</desc>
+  <defs>
+    <clipPath id="left-panel-clip">
+      <rect x="18" y="18" width="332" height="664" />
+    </clipPath>
+    <clipPath id="right-half-clip">
+      <rect x="350" y="0" width="350" height="700" />
+    </clipPath>
+    <clipPath id="left-circle-clip">
+      <circle cx="350" cy="350" r="330" />
+    </clipPath>
+    <pattern
+      id="diagonal-lines"
+      patternUnits="userSpaceOnUse"
+      width="58"
+      height="58"
+      patternTransform="rotate(40)"
+    >
+      <rect width="58" height="58" fill="none" />
+      <rect width="14" height="58" fill="#f7fbff" />
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#right-half-clip)">
+    <circle cx="350" cy="350" r="330" fill="#3b79e8" />
+    <circle cx="455" cy="350" r="172" fill="#ffffff" />
+    <circle cx="350" cy="350" r="330" fill="none" stroke="#041948" stroke-width="16" />
+  </g>
+
+  <g clip-path="url(#left-panel-clip)">
+    <circle cx="350" cy="350" r="330" fill="#3b79e8" />
+    <g clip-path="url(#left-circle-clip)">
+      <rect x="-40" y="-80" width="470" height="860" fill="url(#diagonal-lines)" />
+    </g>
+  </g>
+
+  <rect x="18" y="18" width="332" height="664" fill="none" stroke="#041948" stroke-width="16" />
+  <line x1="350" y1="18" x2="350" y2="682" stroke="#041948" stroke-width="16" />
+</svg>
